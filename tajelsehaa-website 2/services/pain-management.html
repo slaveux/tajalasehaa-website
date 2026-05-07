@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>إدارة الألم واستعادة الحركة | تاج الأصحاء</title>
+<meta name="description" content="تخلّص من الألم المزمن دون إدمان المسكنات. برنامج إدارة ألم متكامل في المدينة المنورة بأحدث التقنيات وأخصائيين معتمدين." />
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  /* Inherit + extend service-page styles (same as physical-therapy page) */
+  .breadcrumb { background: var(--bg-soft); padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--ink-500); }
+  .breadcrumb .container { display: flex; gap: 8px; align-items: center; }
+  .breadcrumb a { color: var(--teal-700); }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { opacity: 0.4; }
+  .breadcrumb .current { color: var(--ink-900); font-weight: 600; }
+
+  .svc-hero { position: relative; background: linear-gradient(135deg, #5b1d3d 0%, var(--teal-900) 100%); color: white; padding: 80px 0 96px; overflow: hidden; }
+  .svc-hero::before { content:""; position: absolute; inset: 0; background: radial-gradient(circle at 90% 20%, rgba(245,158,11,0.22), transparent 45%), radial-gradient(circle at 10% 80%, rgba(30,167,179,0.25), transparent 45%); }
+  .svc-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .svc-hero .eyebrow { background: rgba(245,158,11,0.18); color: #fbbf24; margin-bottom: 20px; }
+  .svc-hero .eyebrow::before { background: #fbbf24; }
+  .svc-hero h1 { font-family: "Tajawal", sans-serif; font-weight: 900; font-size: clamp(36px, 4.6vw, 60px); color: white; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 22px; }
+  .svc-hero h1 .accent { color: #fbbf24; }
+  .svc-hero p.lead { font-size: 19px; line-height: 1.75; color: rgba(255,255,255,0.82); max-width: 580px; margin-bottom: 32px; }
+  .svc-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .svc-hero .btn-primary { background: white; color: var(--teal-800); }
+  .svc-hero .btn-primary:hover { background: var(--teal-50); }
+  .svc-hero .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+  .svc-hero .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .svc-hero-stats { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); }
+  .svc-hero-stats .s strong { display: block; font-family: "Tajawal", sans-serif; font-weight: 800; font-size: 26px; color: white; }
+  .svc-hero-stats .s span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  .svc-hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); background: linear-gradient(135deg, #5b1d3d, #178899); }
+  .svc-hero-visual::before { content:""; position: absolute; inset: 0; background-image: url('../assets/images/program-rehab.svg'); background-size: cover; background-position: center; opacity: 0.85; mix-blend-mode: overlay; }
+  .floater { position: absolute; background: white; color: var(--ink-900); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 12px; max-width: 220px; }
+  .floater .ico { width: 40px; height: 40px; border-radius: 10px; background: var(--teal-50); color: var(--teal-700); display: grid; place-items: center; flex: 0 0 40px; }
+  .floater .ico svg { width: 20px; height: 20px; }
+  .floater strong { display: block; font-size: 14px; font-weight: 700; color: var(--ink-900); line-height: 1.2; }
+  .floater small { font-size: 12px; color: var(--ink-500); }
+  .floater.tl { top: 24px; left: 24px; }
+  .floater.br { bottom: 24px; right: 24px; }
+
+  /* Pain-meter visual */
+  .pain-meter {
+    background: linear-gradient(135deg, var(--bg-soft), white);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    margin: 0 auto;
+    width: min(1080px, 92%);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--line);
+  }
+  .pain-scale { display: flex; gap: 0; border-radius: 12px; overflow: hidden; height: 60px; margin: 32px 0 16px; }
+  .pain-bit {
+    flex: 1; display: grid; place-items: center;
+    color: white; font-weight: 800; font-family: "Tajawal", sans-serif;
+    font-size: 18px;
+  }
+  .pain-bit:nth-child(1) { background: #16a34a; }
+  .pain-bit:nth-child(2) { background: #65a30d; }
+  .pain-bit:nth-child(3) { background: #ca8a04; }
+  .pain-bit:nth-child(4) { background: #ea580c; }
+  .pain-bit:nth-child(5) { background: #dc2626; }
+  .pain-bit:nth-child(6) { background: #991b1b; }
+  .pain-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-500); }
+
+  /* Intro */
+  .intro-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+  .intro-side h2 { margin-bottom: 14px; }
+  .intro-side .eyebrow { margin-bottom: 14px; }
+  .intro-body p { font-size: 17px; line-height: 1.85; color: var(--ink-700); margin-bottom: 16px; }
+  .intro-body p:first-of-type::first-letter { font-family: "Tajawal", sans-serif; font-size: 56px; font-weight: 900; color: #b91c1c; float: right; line-height: 1; margin: 4px 0 0 12px; padding-left: 4px; }
+  .intro-callout { background: #fef3c7; border-right: 4px solid #d97706; border-radius: 12px; padding: 20px 24px; margin: 24px 0; font-size: 16px; color: #78350f; font-weight: 500; line-height: 1.7; }
+
+  /* Approach (no-medication contrast) */
+  .approach { background: var(--bg-soft); }
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .compare-card {
+    background: white; border-radius: var(--radius-lg); padding: 36px;
+    border: 1.5px solid var(--line);
+    position: relative;
+  }
+  .compare-card.bad {
+    border-color: #fecaca; background: #fff5f5;
+  }
+  .compare-card.good {
+    border-color: var(--green-500); background: linear-gradient(135deg, white, #f0fdf4);
+    box-shadow: var(--shadow-md);
+  }
+  .compare-card .label {
+    display: inline-block; padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 700; margin-bottom: 16px;
+  }
+  .compare-card.bad .label { background: #fecaca; color: #991b1b; }
+  .compare-card.good .label { background: var(--green-100); color: #166534; }
+  .compare-card h3 { margin-bottom: 20px; font-size: 22px; }
+  .compare-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .compare-card ul li { display: flex; gap: 12px; font-size: 15px; line-height: 1.55; color: var(--ink-700); }
+  .compare-card ul li::before {
+    content: "✕"; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%;
+    background: #fecaca; color: #991b1b; font-weight: 700; font-size: 12px;
+    display: grid; place-items: center;
+  }
+  .compare-card.good ul li::before {
+    content: "✓"; background: var(--green-100); color: #166534;
+  }
+
+  /* Pain types we treat */
+  .types-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .ptype {
+    background: white; border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 28px;
+    transition: 0.25s; position: relative; overflow: hidden;
+  }
+  .ptype::after {
+    content:""; position: absolute; bottom: 0; right: 0; left: 0; height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #b91c1c);
+    transform: scaleX(0); transform-origin: right; transition: 0.3s;
+  }
+  .ptype:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #fef3c7; }
+  .ptype:hover::after { transform: scaleX(1); }
+  .ptype .ico {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: #fef3c7; color: #b45309;
+    display: grid; place-items: center; margin-bottom: 18px;
+  }
+  .ptype .ico svg { width: 28px; height: 28px; }
+  .ptype h3 { margin-bottom: 8px; font-size: 19px; }
+  .ptype p { font-size: 14px; color: var(--ink-500); line-height: 1.65; margin-bottom: 12px; }
+  .ptype .examples {
+    font-size: 13px; color: var(--teal-700); font-weight: 600;
+    padding-top: 12px; border-top: 1px dashed var(--line);
+  }
+
+  /* CTA bar */
+  .cta-bar {
+    background: linear-gradient(135deg, #b91c1c, var(--teal-700));
+    color: white; border-radius: var(--radius-lg);
+    padding: 36px 44px; margin: 64px auto;
+    width: min(1100px, 92%);
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 24px; box-shadow: var(--shadow-lg);
+  }
+  .cta-bar h3 { color: white; font-size: 24px; margin-bottom: 6px; }
+  .cta-bar p { color: rgba(255,255,255,0.85); font-size: 15px; }
+  .cta-bar .btn-primary { background: white; color: var(--teal-800); }
+  .cta-bar .btn-primary:hover { background: var(--teal-50); }
+
+  /* Process */
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: step; }
+  .step {
+    position: relative; padding: 32px 24px;
+    background: var(--bg-soft); border-radius: var(--radius);
+    border: 1px solid transparent; transition: 0.25s;
+  }
+  .step:hover { background: white; border-color: var(--teal-100); box-shadow: var(--shadow-md); }
+  .step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    position: absolute; top: -18px; right: 24px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-700); color: white;
+    display: grid; place-items: center;
+    font-family: "Tajawal", sans-serif; font-weight: 800;
+    box-shadow: 0 6px 12px -4px var(--teal-700);
+  }
+  .step .ico {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: white; color: var(--teal-700);
+    display: grid; place-items: center; margin-bottom: 16px;
+    border: 1px solid var(--teal-100);
+  }
+  .step .ico svg { width: 22px; height: 22px; }
+  .step h3 { font-size: 18px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--ink-500); line-height: 1.65; }
+
+  /* Mini quote */
+  .mini-quote {
+    background: linear-gradient(135deg, #5b1d3d, var(--teal-900));
+    color: white; padding: 56px;
+    border-radius: var(--radius-lg);
+    width: min(1080px, 92%); margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .mini-quote::before {
+    content: '"';
+    position: absolute; top: 12px; left: 32px;
+    font-family: "Tajawal", serif; font-size: 200px; line-height: 1;
+    color: rgba(245,158,11,0.2); font-weight: 900;
+  }
+  .mini-quote .stars { color: #fbbf24; font-size: 20px; letter-spacing: 4px; margin-bottom: 16px; }
+  .mini-quote .text {
+    font-family: "Tajawal", sans-serif;
+    font-size: 24px; font-weight: 500; line-height: 1.6;
+    color: white; margin-bottom: 20px; position: relative;
+  }
+  .mini-quote .author { display: flex; align-items: center; gap: 12px; }
+  .mini-quote .avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, var(--teal-500));
+    display: grid; place-items: center; color: white; font-weight: 700;
+  }
+  .mini-quote .author strong { display: block; font-size: 16px; color: white; }
+  .mini-quote .author span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  /* Pricing */
+  .pricing { background: var(--bg-soft); }
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1080px; margin: 0 auto; }
+  .price-card {
+    background: white; border-radius: var(--radius-lg);
+    padding: 32px 28px; border: 1.5px solid var(--line);
+    display: flex; flex-direction: column; transition: 0.25s;
+  }
+  .price-card.popular { border-color: var(--teal-500); transform: scale(1.03); box-shadow: var(--shadow-lg); position: relative; }
+  .price-card.popular::before {
+    content: "الأكثر اختياراً";
+    position: absolute; top: -14px; right: 50%; transform: translateX(50%);
+    background: var(--teal-700); color: white;
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+  }
+  .price-card:hover:not(.popular) { border-color: var(--teal-100); transform: translateY(-2px); }
+  .price-card h3 { font-size: 20px; color: var(--teal-900); margin-bottom: 6px; }
+  .price-card .desc { font-size: 14px; color: var(--ink-500); margin-bottom: 20px; }
+  .price-card .amount { font-family: "Tajawal", sans-serif; font-weight: 900; font-size: 38px; color: var(--teal-800); line-height: 1; margin-bottom: 4px; }
+  .price-card .amount small { font-size: 16px; font-weight: 600; color: var(--ink-500); }
+  .price-card .per { font-size: 13px; color: var(--ink-500); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line); }
+  .price-card ul { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .price-card ul li { display: flex; gap: 10px; font-size: 14px; color: var(--ink-700); }
+  .price-card ul li::before {
+    content:""; width: 20px; height: 20px; flex: 0 0 20px;
+    background: var(--green-100); border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233aa17e' stroke-width='3'><polyline points='20,6 9,17 4,12'/></svg>");
+    background-size: 12px; background-repeat: no-repeat; background-position: center;
+  }
+  .price-card .btn { justify-content: center; }
+
+  /* Related */
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .related { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: 0.25s; display: flex; flex-direction: column; }
+  .related:hover { border-color: var(--teal-100); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .related .ico { width: 48px; height: 48px; border-radius: 12px; background: var(--teal-50); color: var(--teal-700); display: grid; place-items: center; margin-bottom: 16px; }
+  .related .ico svg { width: 24px; height: 24px; }
+  .related h3 { font-size: 17px; margin-bottom: 6px; color: var(--teal-900); }
+  .related p { font-size: 14px; color: var(--ink-500); margin-bottom: 16px; flex: 1; }
+  .related .arrow { color: var(--teal-700); font-size: 14px; font-weight: 600; }
+
+  @media (max-width: 1100px) {
+    .svc-hero-grid, .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+    .types-grid, .related-grid, .price-grid { grid-template-columns: repeat(2, 1fr); }
+    .price-card.popular { transform: none; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .compare { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .types-grid, .related-grid, .price-grid, .process-steps { grid-template-columns: 1fr; }
+    .mini-quote { padding: 32px 24px; }
+    .mini-quote .text { font-size: 19px; }
+    .cta-bar { padding: 24px; }
+    .floater.tl, .floater.br { display: none; }
+    .pain-meter { padding: 28px 20px; }
+    .pain-bit { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Utility bar -->
+<div class="util-bar">
+  <div class="container">
+    <div class="util-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg> الاثنين – السبت: 10:00 ص – 7:00 م</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> المدينة المنورة</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="direction:ltr">0573998384</span></span>
+    </div>
+    <div class="util-lang"><button class="active">العربية</button><button>EN</button></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">
+      <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3 8h12l3-8-5 3-4-6-4 6z"/><circle cx="12" cy="3" r="1" fill="currentColor"/></svg></div>
+      <div class="logo-text"><strong>تاج الأصحاء</strong><small>HEALIFE — KSA</small></div>
+    </a>
+    <nav class="nav-menu">
+      <a href="../index.html">الرئيسية</a>
+      <a href="../index.html#services" class="active">خدماتنا</a>
+      <a href="../index.html#about">من نحن</a>
+      <a href="../index.html#programs">البرامج العلاجية</a>
+      <a href="../index.html#contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-cta"><a href="#book" class="btn btn-primary">احجز استشارتك المجانية</a></div>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">الرئيسية</a><span class="sep">/</span>
+    <a href="../index.html#services">خدماتنا</a><span class="sep">/</span>
+    <span class="current">إدارة الألم واستعادة الحركة</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="svc-hero-grid">
+      <div>
+        <span class="eyebrow">إدارة الألم واستعادة الحركة</span>
+        <h1>عِش يومك <span class="accent">دون ألم</span> — وبدون إدمان مسكنات.</h1>
+        <p class="lead">
+          الألم المزمن ليس قدراً يجب أن تتعايش معه. في تاج الأصحاء نعالج جذور الألم — لا أعراضه — عبر برنامج علمي متكامل يجمع التقنيات الحديثة، العلاج اليدوي، والتمارين الموجهة، لاستعادة حياتك الطبيعية بأمان.
+        </p>
+        <div class="svc-hero-ctas">
+          <a href="#book" class="btn btn-primary btn-large">قيّم حالتك مجاناً<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg></a>
+          <a href="tel:+966573998384" class="btn btn-secondary btn-large"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> اتصل الآن</a>
+        </div>
+        <div class="svc-hero-stats">
+          <div class="s"><strong>87%</strong><span>تحسّن في الجلسة الرابعة</span></div>
+          <div class="s"><strong>0%</strong><span>أدوية أو إبر</span></div>
+          <div class="s"><strong>+8,500</strong><span>حالة ألم معالجة</span></div>
+          <div class="s"><strong>4.9/5</strong><span>تقييم المرضى</span></div>
+        </div>
+      </div>
+      <div class="svc-hero-visual">
+        <div class="floater tl">
+          <div class="ico" style="background:#fef3c7;color:#b45309;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+          <div><strong>تشخيص دقيق</strong><small>قبل أي علاج</small></div>
+        </div>
+        <div class="floater br">
+          <div class="ico" style="background:#d1fae5;color:#059669;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <div><strong>بدون أدوية</strong><small>حلول طبيعية فعّالة</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN METER -->
+<section style="padding: 48px 0;">
+  <div class="pain-meter">
+    <div style="text-align:center;margin-bottom:8px;">
+      <span class="eyebrow" style="background:#fef3c7;color:#b45309;">قيّم حالتك</span>
+      <h2 style="margin-top:14px;font-size:28px;">على أي مستوى يقع ألمك اليوم؟</h2>
+      <p style="color:var(--ink-500);font-size:15px;margin-top:8px;">إذا كنت عند 4 أو أعلى لأكثر من أسبوعين — لا تنتظر، تواصل معنا.</p>
+    </div>
+    <div class="pain-scale">
+      <div class="pain-bit">0–1</div>
+      <div class="pain-bit">2–3</div>
+      <div class="pain-bit">4–5</div>
+      <div class="pain-bit">6–7</div>
+      <div class="pain-bit">8–9</div>
+      <div class="pain-bit">10</div>
+    </div>
+    <div class="pain-labels">
+      <span>لا ألم</span>
+      <span>ألم خفيف</span>
+      <span>متوسط — يؤثر على نشاطك</span>
+      <span>شديد — يحتاج تدخل</span>
+      <span>طارئ</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="block">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-side">
+        <span class="eyebrow">ما هي إدارة الألم؟</span>
+        <h2>الألم رسالة. <br/>دعنا نقرأها معك.</h2>
+        <p style="font-size:15px;color:var(--ink-500);margin-top:14px;">منهج طبي متعدد التخصصات يستهدف الألم المزمن من زواياه كلها.</p>
+      </div>
+      <div class="intro-body">
+        <p>إدارة الألم تخصص طبي متقدم يجمع بين علم الأعصاب، العلاج الطبيعي، والعلاج الحركي. هدفنا ليس إخفاء الألم بمسكنات تُسبّب اعتمادية — بل اكتشاف مصدره الحقيقي ومعالجته من جذوره. كل ألم يحمل رسالة عن خلل في الجسم، ووظيفتنا أن نقرأ هذه الرسالة بدقة.</p>
+
+        <p>في كثير من الأحيان، يكون الألم في الركبة سببه ضعف عضلات الفخذ، وألم الرقبة سببه وضعية خاطئة في النوم، وألم الظهر سببه ضعف عضلات البطن. لذلك نُجري تقييماً شاملاً لجسمك كنظام متكامل قبل وضع أي خطة علاجية.</p>
+
+        <div class="intro-callout">
+          ⚠️ تنبيه: تناول المسكنات لأكثر من 10 أيام دون استشارة قد يؤدي إلى مشاكل في الكبد والمعدة، ولا يحلّ المشكلة الأصلية. الحل الحقيقي يبدأ بفهم سبب الألم.
+        </div>
+
+        <p>نتعامل مع الألم الحاد (الذي ظهر حديثاً)، والألم المزمن (المستمر لأكثر من 3 أشهر)، وآلام ما بعد العمليات، وآلام الأعصاب المعقدة. كل حالة تحصل على بروتوكول علاجي خاص يبدأ بمسكّنات طبيعية فعّالة كالحرارة، البرودة، التحفيز الكهربائي، والعلاج اليدوي.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="block approach">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow" style="background:#fef3c7;color:#b45309;">منهجنا مختلف</span>
+      <h2>طريقتان لمواجهة الألم — اختر الأفضل</h2>
+      <p>الفرق ليس فقط في النتيجة، بل في صحتك على المدى الطويل.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-card bad">
+        <span class="label">الطريقة التقليدية</span>
+        <h3>مسكنات وحقن وراحة سريرية</h3>
+        <ul>
+          <li>تخفي الألم مؤقتاً ولا تعالج السبب</li>
+          <li>تسبّب اعتمادية ومشاكل في المعدة والكبد</li>
+          <li>الراحة الطويلة تُضعف العضلات وتزيد المشكلة</li>
+          <li>تتكرر الأزمات وتحتاج جرعات أكبر</li>
+          <li>لا تتعلّم كيف تتجنب عودة الألم</li>
+          <li>نهاية الطريق: تدخل جراحي محتمل</li>
+        </ul>
+      </div>
+      <div class="compare-card good">
+        <span class="label">منهج تاج الأصحاء</span>
+        <h3>تشخيص جذري + علاج طبيعي مدروس</h3>
+        <ul>
+          <li>نُحدد السبب الحقيقي قبل أي علاج</li>
+          <li>بدون أدوية أو آثار جانبية</li>
+          <li>تمارين تُقوّي عضلاتك بدلاً من إضعافها</li>
+          <li>نتائج تدوم لسنوات بعد البرنامج</li>
+          <li>تتعلّم كيف تحمي نفسك من عودة الألم</li>
+          <li>تتجنّب العمليات الجراحية في معظم الحالات</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES OF PAIN -->
+<section class="block">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">أنواع الألم</span>
+      <h2>أيّ نوع من الألم يلازمك؟</h2>
+      <p>لكل نوع من الألم بروتوكول علاجي خاص — هذا ما نُتقنه.</p>
+    </div>
+    <div class="types-grid">
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="9" y1="13" x2="15" y2="13"/></svg></div>
+        <h3>آلام الظهر والعمود الفقري</h3>
+        <p>من أشهر شكاوى العصر، وغالباً سببها الجلوس الطويل وضعف عضلات الجذع.</p>
+        <div class="examples">شد عضلي · ديسك · جنف · انزلاق فقرات</div>
+      </div>
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></div>
+        <h3>آلام المفاصل</h3>
+        <p>الركبة، الكتف، الكوع، الرسغ — مفاصل مرهقة من الإجهاد اليومي والشيخوخة المبكرة.</p>
+        <div class="examples">خشونة · التهابات · تيبّس · إصابات</div>
+      </div>
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-9 4 18 3-9h5"/></svg></div>
+        <h3>آلام الأعصاب</h3>
+        <p>عرق النسا، النفق الرسغي، آلام شعاعية تنتقل من مكان إلى آخر.</p>
+        <div class="examples">عرق النسا · تنميل · حرقة عصبية</div>
+      </div>
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>آلام العضلات والأوتار</h3>
+        <p>تشنجات، عقد عضلية، وآلام إثر التمارين أو الإصابات الرياضية.</p>
+        <div class="examples">تشنّج · شد عضلي · التهاب أوتار</div>
+      </div>
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3>الصداع التوتري والشقيقة</h3>
+        <p>الصداع المزمن غالباً مرتبط بتوتر عضلات الرقبة والأكتاف ووضعية الجلوس.</p>
+        <div class="examples">صداع توتر · شقيقة · صداع مكتب</div>
+      </div>
+      <div class="ptype">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+        <h3>آلام ما بعد العمليات</h3>
+        <p>إعادة تأهيل سريعة وآمنة بعد عمليات الركبة، الورك، الكتف، والعمود الفقري.</p>
+        <div class="examples">ما بعد جراحة · كسور · غضاريف</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INLINE CTA -->
+<div class="cta-bar">
+  <div>
+    <h3>هل عشت سنوات مع ألم لم يحلّه أحد؟</h3>
+    <p>15 دقيقة استشارة مجانية قد تُغيّر حياتك. لا التزام، لا ضغط — فقط إجابات صادقة عن حالتك.</p>
+  </div>
+  <a href="#book" class="btn btn-primary btn-large">احجز استشارتك المجانية<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg></a>
+</div>
+
+<!-- PROCESS -->
+<section class="block" style="padding-top:0;">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">رحلتك معنا</span>
+      <h2>4 مراحل من الألم إلى الحرية</h2>
+      <p>منهج علمي تدريجي يأخذك خطوة بخطوة نحو حياة بلا ألم.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <h3>التشخيص العميق</h3>
+        <p>تقييم سريري شامل + قراءة أشعتك السابقة لتحديد المصدر الحقيقي للألم.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+        <h3>تخفيف الألم العاجل</h3>
+        <p>أول 2-3 جلسات تركز على إنقاص الألم بسرعة عبر العلاج اليدوي والأجهزة المتقدمة.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg></div>
+        <h3>العلاج العميق وإعادة البناء</h3>
+        <p>تقوية العضلات الداعمة وتصحيح اختلالات الحركة لمنع عودة الألم.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h3>الوقاية مدى الحياة</h3>
+        <p>برنامج تمارين منزلي + إرشادات وضعيات + متابعة دورية لضمان عدم عودة الألم.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="mini-quote">
+  <div class="stars">★★★★★</div>
+  <p class="text">«جرّبت كل المسكنات وكل الأطباء لمدة 4 سنوات بسبب عرق النسا. كنت أبكي من الألم في الليل. بعد جلستين فقط في تاج الأصحاء بدأت أنام مرتاحة لأول مرة، وبعد 6 جلسات عاد إليّ المشي الطويل. أتمنى لو عرفتهم من زمان.»</p>
+  <div class="author">
+    <div class="avatar">فا</div>
+    <div>
+      <strong>فاطمة العنزي</strong>
+      <span>47 سنة — معلمة، المدينة المنورة</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="block pricing" id="book">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">باقات إدارة الألم</span>
+      <h2>برامج علاجية تناسب كل حالة</h2>
+      <p>كل الباقات تشمل تشخيصاً مجانياً، خطة مخصصة، وتمارين منزلية موثّقة بالفيديو.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>تقييم الألم</h3>
+        <p class="desc">للمرضى الجدد — جلسة تشخيص شاملة وتوصيات علاجية واضحة.</p>
+        <div class="amount">300 <small>ر.س</small></div>
+        <div class="per">جلسة واحدة (75 دقيقة)</div>
+        <ul>
+          <li>فحص سريري متعدد الزوايا</li>
+          <li>قراءة الأشعة والتقارير</li>
+          <li>اختبارات حركية ووظيفية</li>
+          <li>تقرير مكتوب بحالتك وخطة علاج</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">احجز التقييم</a>
+      </div>
+      <div class="price-card popular">
+        <h3>برنامج ألم 6 أسابيع</h3>
+        <p class="desc">الأكثر طلباً للآلام المزمنة — نتائج ملموسة من الأسبوع الثاني.</p>
+        <div class="amount">2,400 <small>ر.س</small></div>
+        <div class="per">12 جلسة على 6 أسابيع</div>
+        <ul>
+          <li>تقييم متقدم متعدد التخصصات</li>
+          <li>12 جلسة بأخصائي ثابت</li>
+          <li>كل التقنيات الحديثة المتاحة</li>
+          <li>برنامج تمارين منزلي بالفيديو</li>
+          <li>متابعة عبر واتساب طوال البرنامج</li>
+          <li>جلسة وقاية مجانية بعد 3 أشهر</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">ابدأ التحرر من الألم</a>
+      </div>
+      <div class="price-card">
+        <h3>برنامج الألم المعقّد</h3>
+        <p class="desc">لحالات الألم المركّب أو ما بعد جراحة — برنامج شامل مكثّف.</p>
+        <div class="amount">4,500 <small>ر.س</small></div>
+        <div class="per">20 جلسة على 10 أسابيع</div>
+        <ul>
+          <li>تقييم متعدد الأخصائيين</li>
+          <li>20 جلسة مكثفة</li>
+          <li>دمج كل تقنيات إدارة الألم</li>
+          <li>زيارتان منزليتان مجانيتان</li>
+          <li>تقرير طبي مفصّل معتمد</li>
+          <li>متابعة 6 أشهر بعد البرنامج</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">تواصل للتفاصيل</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:32px;color:var(--ink-500);font-size:14px;">
+      * خصم 15% للحالات التي تشترك في برنامج كامل دفعة واحدة. خصومات خاصة لكبار السن.
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" style="background:white;">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">أسئلة شائعة</span>
+      <h2>إجابات صادقة عن استفساراتك</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item" open>
+        <summary>هل سأتوقف عن المسكنات فوراً؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">لا، الإقلاع يكون تدريجياً وآمناً بإشراف طبي. نخفض الجرعات بالتوازي مع تحسّنك من الجلسات. أغلب المرضى يستغنون عن المسكنات بعد 4–6 جلسات.</div>
+      </details>
+      <details class="faq-item">
+        <summary>أعاني من ألم منذ سنوات — هل ما زال هناك أمل؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">نعم، وغالباً نتائج المرضى المزمنين أفضل لأنهم يلتزمون أكثر. رأينا حالات بعد 10 سنوات من الألم تتعافى تماماً خلال 8–12 أسبوع.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل البرنامج مناسب لكبار السن؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">بالطبع، بل هو الأنسب لهم لأنه آمن وخالٍ من الأدوية. لدينا برتوكولات مخصصة لكبار السن تأخذ في الاعتبار العظام والأعصاب.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل سأشعر بألم أثناء العلاج؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">قد تشعر ببعض الإجهاد العضلي بعد أول جلستين، وهذا طبيعي. الجلسات نفسها مريحة جداً، وتشعر فيها بالاسترخاء والراحة في الغالب.</div>
+      </details>
+      <details class="faq-item">
+        <summary>كم نسبة نجاح البرنامج؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">87% من المرضى يلاحظون انخفاضاً ملموساً في الألم خلال الجلسات الأربع الأولى، و94% يكملون البرنامج برضا تام عن النتائج.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل تستقبلون التأمين الصحي؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">نعم، نتعاون مع شركات التأمين الكبرى في المملكة. تواصل معنا برقم بطاقتك لنتأكد من تغطيتها.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding: 0 0 96px;">
+  <div class="cta-banner">
+    <div class="cta-banner-grid">
+      <div>
+        <h2>الألم لن يختفي من تلقاء نفسه</h2>
+        <p>كل أسبوع تتأخر فيه، يصبح الألم أعمق وأصعب علاجاً. ابدأ اليوم — والاستشارة الأولى مجانية.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#book" class="btn btn-primary btn-large">احجز استشارتك المجانية</a>
+        <a href="https://wa.me/966573998384" class="btn btn-secondary btn-large">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8.9-1 1.1-.4.2-.7.1c-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5s.1-.4 0-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.2-.1-.5-.2-.8-.4z"/></svg>
+          راسلنا على واتساب
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="block" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">قد يهمّك أيضاً</span>
+      <h2>خدمات مكمّلة</h2>
+    </div>
+    <div class="related-grid">
+      <a href="physical-therapy.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><path d="M5 9h14l-1 12H6L5 9z"/></svg></div>
+        <h3>العلاج الطبيعي وإعادة التأهيل</h3>
+        <p>برنامج شامل لاستعادة الحركة والقوة بعد الإصابات والجراحات.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+      <a href="cupping.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="6"/><circle cx="12" cy="10" r="2"/><path d="M12 16v6"/></svg></div>
+        <h3>العلاج بالحجامة</h3>
+        <p>حجامة وقائية وعلاجية لتنشيط الدورة الدموية وتنقية الجسم.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+      <a href="advanced-tech.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>تقنيات إعادة التأهيل المتقدمة</h3>
+        <p>أحدث الأجهزة العالمية لدعم المفاصل والعضلات بدقة وكفاءة.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="logo" href="../index.html">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3 8h12l3-8-5 3-4-6-4 6z"/><circle cx="12" cy="3" r="1" fill="currentColor"/></svg></div>
+          <div class="logo-text"><strong style="color:white;">تاج الأصحاء</strong><small style="color:rgba(255,255,255,0.5);">HEALIFE — KSA</small></div>
+        </a>
+        <p>شريكك الموثوق في رحلة الصحة والعافية — نجمع بين التقاليد العلاجية والتقنيات الحديثة لرعاية شاملة بمعايير عالمية.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../index.html#services">خدماتنا</a></li>
+          <li><a href="../index.html#about">من نحن</a></li>
+          <li><a href="../index.html#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>خدماتنا</h4>
+        <ul>
+          <li><a href="physical-therapy.html">العلاج الطبيعي</a></li>
+          <li><a href="pain-management.html">إدارة الألم</a></li>
+          <li><a href="cupping.html">العلاج بالحجامة</a></li>
+          <li><a href="advanced-tech.html">تقنيات إعادة التأهيل</a></li>
+          <li><a href="body-sculpting.html">التنحيف ونحت الجسم</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>معلومات التواصل</h4>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>المدينة المنورة، السعودية</span></div>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span style="direction:ltr;display:inline-block">+966 57 399 8384</span></div>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span style="direction:ltr;display:inline-block">info@healife-ksa.com</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 تاج الأصحاء — Healife KSA. جميع الحقوق محفوظة.</span>
+      <span>سياسة الخصوصية · الشروط والأحكام</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/966573998384" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8.9-1 1.1-.4.2-.7.1c-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5s.1-.4 0-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.2-.1-.5-.2-.8-.4zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.4 5.1L2 22l5-1.4A10 10 0 0 0 12 22a10 10 0 0 0 0-20zm0 18a8 8 0 0 1-4.4-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 20 12a8 8 0 0 1-8 8z"/></svg>
+</a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

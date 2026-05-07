@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name_ar": "أحمد المطيري",
+    "name_en": "Ahmed Almutairi",
+    "location_ar": "المدينة المنورة",
+    "location_en": "Madinah",
+    "rating": 5,
+    "quote_ar": "عانيت من ألم مزمن في الظهر لسنوات، وبعد جلسات قليلة في تاج الأصحاء بدأت أشعر بفرق حقيقي. الفريق محترف ومتفهم، والنتائج فاقت توقعاتي.",
+    "quote_en": "I suffered chronic back pain for years. After only a few sessions at Taj AlAsehaa I felt a real difference. Professional, empathetic team — results beyond my expectations."
+  },
+  {
+    "id": 2,
+    "name_ar": "سعاد القحطاني",
+    "name_en": "Suad Alqahtani",
+    "location_ar": "عميلة دائمة",
+    "location_en": "Returning Patient",
+    "rating": 5,
+    "quote_ar": "كانت تجربتي مع العلاج بعد الإصابة الرياضية مذهلة. التقنيات المستخدمة حديثة جداً وفريق العمل يقدم رعاية شخصية لكل مريض على حدة.",
+    "quote_en": "My recovery after a sports injury was excellent. The technology is modern and care is genuinely personalized."
+  },
+  {
+    "id": 3,
+    "name_ar": "خالد العبدلي",
+    "name_en": "Khalid Alabdali",
+    "location_ar": "زائر من الرياض",
+    "location_en": "Visitor from Riyadh",
+    "rating": 5,
+    "quote_ar": "برنامج تأهيل المعتمرين كان نقلة نوعية بعد العمرة. المكان نظيف، الطاقم لطيف، والأسعار مناسبة جداً مقارنة بجودة الخدمة المقدمة.",
+    "quote_en": "The Pilgrim Rehab program was a game-changer after Umrah. Clean facility, kind staff, fair pricing for the quality."
+  }
+]

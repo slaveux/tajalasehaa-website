@@ -1,0 +1,35 @@
+[
+  {
+    "id": "movement-rehab",
+    "title_ar": "برنامج إعادة التأهيل الحركي",
+    "title_en": "Movement Rehabilitation Program",
+    "tag_ar": "الأكثر طلباً",
+    "tag_en": "Most Popular",
+    "duration": "4-8 weeks",
+    "image": "assets/images/program-rehab.svg",
+    "description_ar": "برنامج متكامل لاستعادة الحركة بعد الإصابات والجراحات، يشمل التقييم الأولي، الجلسات العلاجية، والمتابعة.",
+    "description_en": "Integrated program to restore movement after injury and surgery: assessment, sessions, and follow-up."
+  },
+  {
+    "id": "home-therapy",
+    "title_ar": "برنامج العلاج الطبيعي المنزلي",
+    "title_en": "At-Home Physical Therapy",
+    "tag_ar": "جديد",
+    "tag_en": "New",
+    "duration": "في منزلك / At home",
+    "image": "assets/images/program-home.svg",
+    "description_ar": "جلسات علاج طبيعي في منزلك، يقدمها فريقنا المتخصص لراحتك وتسريع التعافي في بيئتك المألوفة.",
+    "description_en": "In-home physical therapy delivered by our specialists for comfort and faster recovery."
+  },
+  {
+    "id": "umrah-program",
+    "title_ar": "برنامج تأهيل المعتمرين",
+    "title_en": "Umrah Rehabilitation Program",
+    "tag_ar": "مخصص",
+    "tag_en": "Specialized",
+    "duration": "للحجاج والمعتمرين / For pilgrims",
+    "image": "assets/images/program-umrah.svg",
+    "description_ar": "برنامج متخصص لتخفيف الإجهاد العضلي واستعادة الطاقة بعد أداء العمرة والحج.",
+    "description_en": "Specialized program to ease muscular strain and restore energy after Umrah / Hajj."
+  }
+]

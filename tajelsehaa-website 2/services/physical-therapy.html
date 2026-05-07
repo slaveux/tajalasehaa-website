@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>العلاج الطبيعي وإعادة التأهيل | تاج الأصحاء</title>
+<meta name="description" content="جلسات علاج طبيعي وإعادة تأهيل متقدمة في المدينة المنورة بمعايير ماليزية. استعد حركتك وتخلص من الألم مع فريق متخصص وأجهزة عالمية." />
+<link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  /* ---------- Service-page additions ---------- */
+  .breadcrumb {
+    background: var(--bg-soft);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    color: var(--ink-500);
+  }
+  .breadcrumb .container { display: flex; gap: 8px; align-items: center; }
+  .breadcrumb a { color: var(--teal-700); }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { opacity: 0.4; }
+  .breadcrumb .current { color: var(--ink-900); font-weight: 600; }
+
+  /* Service hero */
+  .svc-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--teal-900) 0%, var(--teal-700) 100%);
+    color: white;
+    padding: 80px 0 96px;
+    overflow: hidden;
+  }
+  .svc-hero::before {
+    content:""; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 90% 20%, rgba(30,167,179,0.35), transparent 45%),
+      radial-gradient(circle at 10% 80%, rgba(58,161,126,0.22), transparent 45%);
+  }
+  .svc-hero-grid {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 56px; align-items: center;
+  }
+  .svc-hero .eyebrow {
+    background: rgba(30,167,179,0.18); color: var(--teal-500);
+    margin-bottom: 20px;
+  }
+  .svc-hero .eyebrow::before { background: var(--teal-500); }
+  .svc-hero h1 {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 4.6vw, 60px);
+    color: white;
+    line-height: 1.1; letter-spacing: -0.015em;
+    margin-bottom: 22px;
+  }
+  .svc-hero h1 .accent { color: var(--teal-500); }
+  .svc-hero p.lead {
+    font-size: 19px; line-height: 1.75;
+    color: rgba(255,255,255,0.82);
+    max-width: 580px; margin-bottom: 32px;
+  }
+  .svc-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .svc-hero .btn-primary { background: white; color: var(--teal-800); }
+  .svc-hero .btn-primary:hover { background: var(--teal-50); }
+  .svc-hero .btn-secondary { background: transparent; color: white; border-color: rgba(255,255,255,0.3); }
+  .svc-hero .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+  .svc-hero-stats {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .svc-hero-stats .s strong { display: block; font-family: "Tajawal", sans-serif; font-weight: 800; font-size: 26px; color: white; }
+  .svc-hero-stats .s span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  .svc-hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #178899, #3aa17e);
+  }
+  .svc-hero-visual::before {
+    content:""; position: absolute; inset: 0;
+    background-image: url('../assets/images/program-rehab.svg');
+    background-size: cover; background-position: center;
+  }
+  .floater {
+    position: absolute;
+    background: white; color: var(--ink-900);
+    border-radius: 14px; padding: 14px 18px;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 12px;
+    max-width: 220px;
+  }
+  .floater .ico {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--teal-50); color: var(--teal-700);
+    display: grid; place-items: center; flex: 0 0 40px;
+  }
+  .floater .ico svg { width: 20px; height: 20px; }
+  .floater strong { display: block; font-size: 14px; font-weight: 700; color: var(--ink-900); line-height: 1.2; }
+  .floater small { font-size: 12px; color: var(--ink-500); }
+  .floater.tl { top: 24px; left: 24px; animation: float-a 6s ease-in-out infinite; }
+  .floater.br { bottom: 24px; right: 24px; animation: float-b 7s ease-in-out infinite; }
+  @keyframes float-a { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+  @keyframes float-b { 0%,100%{transform:translateY(0);} 50%{transform:translateY(8px);} }
+
+  /* Intro / what-is */
+  .intro-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 56px; align-items: start;
+  }
+  .intro-side h2 { margin-bottom: 14px; }
+  .intro-side .eyebrow { margin-bottom: 14px; }
+  .intro-body p {
+    font-size: 17px; line-height: 1.85; color: var(--ink-700);
+    margin-bottom: 16px;
+  }
+  .intro-body p:first-of-type::first-letter {
+    font-family: "Tajawal", sans-serif;
+    font-size: 56px; font-weight: 900;
+    color: var(--teal-700); float: right;
+    line-height: 1; margin: 4px 0 0 12px;
+    padding-left: 4px;
+  }
+  .intro-callout {
+    background: var(--teal-50); border-right: 4px solid var(--teal-700);
+    border-radius: 12px; padding: 20px 24px;
+    margin: 24px 0; font-size: 16px;
+    color: var(--teal-900); font-weight: 500; line-height: 1.7;
+  }
+
+  /* Benefits */
+  .benefits { background: var(--bg-soft); }
+  .benefits-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .benefit {
+    background: white; border-radius: var(--radius); padding: 28px;
+    border: 1px solid var(--line);
+    transition: 0.25s ease;
+    position: relative;
+  }
+  .benefit:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--teal-100); }
+  .benefit .num {
+    position: absolute; top: 20px; left: 20px;
+    font-family: "Tajawal", sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--teal-100);
+    letter-spacing: 0.1em;
+  }
+  .benefit .ico {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--teal-50); color: var(--teal-700);
+    display: grid; place-items: center; margin-bottom: 18px;
+  }
+  .benefit .ico svg { width: 26px; height: 26px; }
+  .benefit h3 { margin-bottom: 8px; font-size: 19px; }
+  .benefit p { font-size: 14px; color: var(--ink-500); line-height: 1.65; }
+
+  /* Conditions list */
+  .conditions-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px; max-width: 920px; margin: 0 auto;
+  }
+  .condition {
+    display: flex; gap: 14px; align-items: center;
+    padding: 18px 22px;
+    background: white; border: 1px solid var(--line);
+    border-radius: 12px;
+    transition: 0.2s;
+  }
+  .condition:hover { border-color: var(--teal-500); transform: translateX(-4px); }
+  .condition .check {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--green-100); color: var(--green-600);
+    display: grid; place-items: center; flex: 0 0 32px;
+  }
+  .condition .check svg { width: 16px; height: 16px; }
+  .condition span { font-size: 16px; font-weight: 500; color: var(--ink-900); }
+
+  /* Process steps */
+  .process { background: white; }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; counter-reset: step;
+  }
+  .step {
+    position: relative;
+    padding: 32px 24px;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: 0.25s;
+  }
+  .step:hover { background: white; border-color: var(--teal-100); box-shadow: var(--shadow-md); }
+  .step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    position: absolute; top: -18px; right: 24px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-700); color: white;
+    display: grid; place-items: center;
+    font-family: "Tajawal", sans-serif; font-weight: 800;
+    box-shadow: 0 6px 12px -4px var(--teal-700);
+  }
+  .step .ico {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: white; color: var(--teal-700);
+    display: grid; place-items: center; margin-bottom: 16px;
+    border: 1px solid var(--teal-100);
+  }
+  .step .ico svg { width: 22px; height: 22px; }
+  .step h3 { font-size: 18px; margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--ink-500); line-height: 1.65; }
+
+  /* Inline CTA bar */
+  .cta-bar {
+    background: linear-gradient(135deg, var(--green-600), var(--teal-700));
+    color: white;
+    border-radius: var(--radius-lg);
+    padding: 36px 44px;
+    margin: 64px auto;
+    width: min(1100px, 92%);
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: space-between;
+    gap: 24px;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-bar h3 { color: white; font-size: 24px; margin-bottom: 6px; }
+  .cta-bar p { color: rgba(255,255,255,0.85); font-size: 15px; }
+  .cta-bar .btn-primary { background: white; color: var(--teal-800); }
+  .cta-bar .btn-primary:hover { background: var(--teal-50); }
+
+  /* Equipment / techniques */
+  .equipment-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .equip {
+    display: flex; gap: 18px;
+    padding: 24px;
+    background: white; border-radius: var(--radius);
+    border: 1px solid var(--line);
+    transition: 0.2s;
+  }
+  .equip:hover { border-color: var(--teal-100); box-shadow: var(--shadow-sm); }
+  .equip .ico {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--teal-50), var(--green-100));
+    color: var(--teal-700);
+    display: grid; place-items: center; flex: 0 0 56px;
+  }
+  .equip .ico svg { width: 28px; height: 28px; }
+  .equip h3 { font-size: 17px; margin-bottom: 6px; }
+  .equip p { font-size: 14px; color: var(--ink-500); line-height: 1.65; }
+
+  /* Pricing snapshot */
+  .pricing { background: var(--bg-soft); }
+  .price-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 22px; max-width: 1080px; margin: 0 auto;
+  }
+  .price-card {
+    background: white; border-radius: var(--radius-lg);
+    padding: 32px 28px; border: 1.5px solid var(--line);
+    display: flex; flex-direction: column;
+    transition: 0.25s;
+  }
+  .price-card.popular {
+    border-color: var(--teal-500);
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+  }
+  .price-card.popular::before {
+    content: "الأكثر اختياراً";
+    position: absolute; top: -14px; right: 50%; transform: translateX(50%);
+    background: var(--teal-700); color: white;
+    padding: 6px 16px; border-radius: 999px;
+    font-size: 12px; font-weight: 700;
+  }
+  .price-card:hover:not(.popular) { border-color: var(--teal-100); transform: translateY(-2px); }
+  .price-card h3 { font-size: 20px; color: var(--teal-900); margin-bottom: 6px; }
+  .price-card .desc { font-size: 14px; color: var(--ink-500); margin-bottom: 20px; }
+  .price-card .amount {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 900; font-size: 38px;
+    color: var(--teal-800); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-card .amount small { font-size: 16px; font-weight: 600; color: var(--ink-500); }
+  .price-card .per { font-size: 13px; color: var(--ink-500); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line); }
+  .price-card ul { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .price-card ul li { display: flex; gap: 10px; font-size: 14px; color: var(--ink-700); }
+  .price-card ul li::before {
+    content:""; width: 20px; height: 20px; flex: 0 0 20px;
+    background: var(--green-100);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233aa17e' stroke-width='3'><polyline points='20,6 9,17 4,12'/></svg>");
+    background-size: 12px; background-repeat: no-repeat; background-position: center;
+  }
+  .price-card .btn { justify-content: center; }
+
+  /* FAQ specific */
+  .svc-faq { background: white; }
+
+  /* Mini testimonial */
+  .mini-quote {
+    background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+    color: white; padding: 56px;
+    border-radius: var(--radius-lg);
+    width: min(1080px, 92%); margin: 0 auto;
+    position: relative; overflow: hidden;
+  }
+  .mini-quote::before {
+    content: '"';
+    position: absolute; top: 12px; left: 32px;
+    font-family: "Tajawal", serif; font-size: 200px; line-height: 1;
+    color: rgba(30,167,179,0.2); font-weight: 900;
+  }
+  .mini-quote .stars { color: #f4b740; font-size: 20px; letter-spacing: 4px; margin-bottom: 16px; }
+  .mini-quote .text {
+    font-family: "Tajawal", sans-serif;
+    font-size: 24px; font-weight: 500; line-height: 1.6;
+    color: white; margin-bottom: 20px; position: relative;
+  }
+  .mini-quote .author { display: flex; align-items: center; gap: 12px; }
+  .mini-quote .avatar {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal-500), var(--green-500));
+    display: grid; place-items: center; color: white; font-weight: 700;
+  }
+  .mini-quote .author strong { display: block; font-size: 16px; color: white; }
+  .mini-quote .author span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  /* Related services */
+  .related-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .related {
+    background: white; border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 24px;
+    transition: 0.25s;
+    display: flex; flex-direction: column;
+  }
+  .related:hover { border-color: var(--teal-100); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .related .ico {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--teal-50); color: var(--teal-700);
+    display: grid; place-items: center; margin-bottom: 16px;
+  }
+  .related .ico svg { width: 24px; height: 24px; }
+  .related h3 { font-size: 17px; margin-bottom: 6px; color: var(--teal-900); }
+  .related p { font-size: 14px; color: var(--ink-500); margin-bottom: 16px; flex: 1; }
+  .related .arrow { color: var(--teal-700); font-size: 14px; font-weight: 600; }
+
+  @media (max-width: 1100px) {
+    .svc-hero-grid, .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+    .benefits-grid, .related-grid, .price-grid { grid-template-columns: repeat(2, 1fr); }
+    .price-card.popular { transform: none; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .equipment-grid, .conditions-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .benefits-grid, .related-grid, .price-grid, .process-steps { grid-template-columns: 1fr; }
+    .mini-quote { padding: 32px 24px; }
+    .mini-quote .text { font-size: 19px; }
+    .cta-bar { padding: 24px; }
+    .floater.tl, .floater.br { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Utility bar -->
+<div class="util-bar">
+  <div class="container">
+    <div class="util-meta">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg> الاثنين – السبت: 10:00 ص – 7:00 م</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> المدينة المنورة</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span style="direction:ltr">0573998384</span></span>
+    </div>
+    <div class="util-lang">
+      <button class="active">العربية</button>
+      <button>EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8l3 8h12l3-8-5 3-4-6-4 6z"/><circle cx="12" cy="3" r="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <strong>تاج الأصحاء</strong>
+        <small>HEALIFE — KSA</small>
+      </div>
+    </a>
+    <nav class="nav-menu">
+      <a href="../index.html">الرئيسية</a>
+      <a href="../index.html#services" class="active">خدماتنا</a>
+      <a href="../index.html#about">من نحن</a>
+      <a href="../index.html#programs">البرامج العلاجية</a>
+      <a href="../index.html#contact">تواصل معنا</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#book" class="btn btn-primary">
+        احجز استشارتك المجانية
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="../index.html">الرئيسية</a>
+    <span class="sep">/</span>
+    <a href="../index.html#services">خدماتنا</a>
+    <span class="sep">/</span>
+    <span class="current">العلاج الطبيعي وإعادة التأهيل</span>
+  </div>
+</div>
+
+<!-- 1. SERVICE HERO -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="svc-hero-grid">
+      <div>
+        <span class="eyebrow">العلاج الطبيعي وإعادة التأهيل</span>
+        <h1>استعد <span class="accent">حركتك الكاملة</span> وعِش حياتك دون ألم.</h1>
+        <p class="lead">
+          في تاج الأصحاء نقدّم برامج علاج طبيعي وإعادة تأهيل بمعايير ماليزية متقدمة، مصممة خصيصاً لحالتك الصحية. لا حلول سريعة ولا وعود فارغة — بل خطة علاجية مدروسة تعيد لك قدرتك على الحركة، النوم، والعمل بشكل طبيعي.
+        </p>
+        <div class="svc-hero-ctas">
+          <a href="#book" class="btn btn-primary btn-large">
+            احجز استشارتك المجانية الآن
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
+          </a>
+          <a href="tel:+966573998384" class="btn btn-secondary btn-large">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            اتصل الآن
+          </a>
+        </div>
+        <div class="svc-hero-stats">
+          <div class="s"><strong>+10,000</strong><span>حالة معالجة</span></div>
+          <div class="s"><strong>98%</strong><span>تحسّن ملحوظ</span></div>
+          <div class="s"><strong>+15</strong><span>سنة خبرة تراكمية</span></div>
+          <div class="s"><strong>+12</strong><span>أخصائي معتمد</span></div>
+        </div>
+      </div>
+      <div class="svc-hero-visual">
+        <div class="floater tl">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+          <div><strong>تقييم مجاني أولي</strong><small>قبل أي جلسة</small></div>
+        </div>
+        <div class="floater br">
+          <div class="ico" style="background:#fff8e6;color:#d97706;"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,8.5 22,9.3 17,14.1 18.2,21 12,17.8 5.8,21 7,14.1 2,9.3 9,8.5"/></svg></div>
+          <div><strong>4.9 من 5</strong><small>تقييم من +600 مريض</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. WHAT IS IT -->
+<section class="block">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-side">
+        <span class="eyebrow">ما هو العلاج الطبيعي؟</span>
+        <h2>علم. خبرة. <br/>نتائج تدوم.</h2>
+        <p style="font-size:15px;color:var(--ink-500);margin-top:14px;">
+          ليس مجرد جلسات تدليك — بل منهج طبي علمي معتمد عالمياً.
+        </p>
+      </div>
+      <div class="intro-body">
+        <p>العلاج الطبيعي وإعادة التأهيل هو فرع طبي متخصص يعتمد على الحركة، التقنيات اليدوية، والأجهزة الحديثة لاستعادة الوظائف الجسدية وتخفيف الألم وتحسين جودة الحياة. في تاج الأصحاء، لا نتعامل مع الأعراض فقط — بل نُشخّص السبب الجذري ونصمم خطة علاجية تُعالج المشكلة من جذورها.</p>
+
+        <p>نتبع البروتوكولات الماليزية المعتمدة في إعادة التأهيل، والتي تجمع بين أحدث ما توصل إليه الطب الحديث وبين الحكمة الشرقية في فهم الجسم كنظام متكامل. كل خطة علاج تبدأ بتقييم سريري شامل من قِبل أخصائي معتمد، ثم تُبنى وفق حالتك الفردية، عمرك، نمط حياتك، وأهدافك الشخصية.</p>
+
+        <div class="intro-callout">
+          💡 الفرق بيننا وبين غيرنا: لا نُكرّر برنامجاً جاهزاً على كل مريض. خطتك العلاجية مصممة لك وحدك، وتتطور مع كل جلسة بحسب استجابة جسدك.
+        </div>
+
+        <p>سواء كنت تعاني من ألم مزمن في الظهر، أو تتعافى من إصابة رياضية، أو تحتاج إلى استعادة الحركة بعد عملية جراحية، أو ببساطة تريد التخلص من التوتر العضلي اليومي — فريقنا جاهز لاصطحابك في رحلة شفاء آمنة، تدريجية، وفعّالة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. BENEFITS -->
+<section class="block benefits">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">لماذا تختار العلاج الطبيعي؟</span>
+      <h2>9 فوائد ستشعر بها من الجلسة الأولى</h2>
+      <p>العلاج الطبيعي ليس رفاهية — بل استثمار في صحتك على المدى الطويل، وبديل آمن للأدوية المسكّنة والتدخلات الجراحية.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit">
+        <span class="num">/ 01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>تخفيف الألم بدون أدوية</h3>
+        <p>تقنيات يدوية وأجهزة متخصصة تخفف الألم من جذوره — بدلاً من إخفائه بالمسكنات.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-9 4 18 3-9h5"/></svg></div>
+        <h3>استعادة المرونة والحركة</h3>
+        <p>تمارين علاجية مدروسة تعيد للمفاصل والعضلات مدى حركتها الطبيعي تدريجياً.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+        <h3>تجنّب التدخل الجراحي</h3>
+        <p>كثير من الحالات التي يُنصح فيها بالجراحة يمكن علاجها تماماً بالعلاج الطبيعي.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>تحسين جودة النوم</h3>
+        <p>عند زوال الألم وارتخاء العضلات، تستعيد قدرتك على نوم عميق ومريح.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 05</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>تعزيز التوازن وتفادي السقوط</h3>
+        <p>خاصة لكبار السن — تمارين توازن وتقوية تقلل بشكل كبير من خطر السقوط.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 06</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+        <h3>تسريع التعافي بعد الجراحة</h3>
+        <p>برنامج إعادة تأهيل ما بعد العمليات يقلّص فترة النقاهة إلى النصف.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 07</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <h3>تحسين الوضعية اليومية</h3>
+        <p>تصحيح الوقفة والجلسة لمن يعملون أمام الشاشات لساعات طويلة.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 08</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg></div>
+        <h3>زيادة الطاقة والنشاط</h3>
+        <p>عضلات أقوى = جسم يستهلك طاقة أقل في الحركات اليومية.</p>
+      </div>
+      <div class="benefit">
+        <span class="num">/ 09</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <h3>وقاية طويلة الأمد</h3>
+        <p>تتعلم تمارين منزلية تقي من عودة المشكلة وتحافظ على نتائجك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INLINE CTA BAR -->
+<div class="cta-bar">
+  <div>
+    <h3>هل تتساءل: هل العلاج الطبيعي مناسب لحالتي؟</h3>
+    <p>تحدّث مع أحد المختصين بشكل مجاني — سنُشخّص حالتك ونخبرك بصدق.</p>
+  </div>
+  <a href="#book" class="btn btn-primary btn-large">
+    احجز استشارة مجانية
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="16" height="16"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
+  </a>
+</div>
+
+<!-- 4. CONDITIONS WE TREAT -->
+<section class="block" style="padding-top:0;">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">من يستفيد من هذا العلاج؟</span>
+      <h2>الحالات التي نتعامل معها بنجاح</h2>
+      <p>إذا كنت تعاني من أيٍّ من هذه الحالات، فأنت في المكان الصحيح — لدينا برنامج علاجي مُعدّ خصيصاً لها.</p>
+    </div>
+    <div class="conditions-grid">
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>آلام أسفل الظهر المزمنة والحادة</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>الديسك وانزلاق الفقرات</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>آلام الرقبة وتيبّس الأكتاف</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>التهاب الأوتار والمفاصل</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>إصابات الركبة والكتف الرياضية</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>إعادة التأهيل بعد العمليات الجراحية</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>السكتات الدماغية وضعف الأطراف</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>الصداع المتكرر الناتج عن التوتر</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>اضطرابات الوضعية والجنف</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>متلازمة النفق الرسغي وآلام اليد</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>عرق النسا وآلام الأعصاب الطرفية</span></div>
+      <div class="condition"><div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div><span>إعادة تأهيل بعد الكسور والجبائر</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROCESS -->
+<section class="block process">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">رحلة العلاج معنا</span>
+      <h2>كيف تسير الجلسات؟ 4 خطوات بسيطة</h2>
+      <p>نُقدّر وقتك وثقتك، لذلك صمّمنا منهجية واضحة وشفافة من اللحظة التي تتصل فيها وحتى تعود إلى حياتك بكامل قوتك.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>الاستشارة المجانية</h3>
+        <p>اتصل أو احجز عبر الموقع. نتحدث معك لمدة 15 دقيقة لفهم شكواك بشكل مبدئي.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>التقييم السريري الشامل</h3>
+        <p>في زيارتك الأولى، يُجري الأخصائي فحصاً دقيقاً ويحدد مصدر الألم والخطة المناسبة.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg></div>
+        <h3>الجلسات العلاجية</h3>
+        <p>جلسات منتظمة (45-60 دقيقة) تجمع بين العلاج اليدوي، الأجهزة، والتمارين الموجهة.</p>
+      </div>
+      <div class="step">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg></div>
+        <h3>المتابعة والوقاية</h3>
+        <p>برنامج تمارين منزلية مخصص لك، ومراجعات دورية للتأكد من ثبات النتائج.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="mini-quote">
+  <div class="stars">★★★★★</div>
+  <p class="text">«عانيت 3 سنوات من ألم في الظهر منعني من النوم والصلاة بشكل طبيعي. بعد 8 جلسات في تاج الأصحاء، أستطيع الآن السجود دون ألم وأمارس المشي يومياً. لم أكن أتخيل أن الفرق سيكون بهذه السرعة.»</p>
+  <div class="author">
+    <div class="avatar">عس</div>
+    <div>
+      <strong>عبدالله السبيعي</strong>
+      <span>54 سنة — المدينة المنورة</span>
+    </div>
+  </div>
+</div>
+
+<!-- 6. EQUIPMENT / TECHNIQUES -->
+<section class="block">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">التقنيات والأجهزة</span>
+      <h2>أحدث ما توصلت إليه التقنية الطبية</h2>
+      <p>نستثمر باستمرار في أجهزة عالمية معتمدة لأن نتائجك تستحق ذلك.</p>
+    </div>
+    <div class="equipment-grid">
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg></div>
+        <div>
+          <h3>العلاج بالموجات الصدمية (Shockwave)</h3>
+          <p>موجات صوتية عالية الطاقة لعلاج التهابات الأوتار المزمنة والمسامير العظمية بفعالية مذهلة.</p>
+        </div>
+      </div>
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div>
+          <h3>الليزر العلاجي عالي الطاقة</h3>
+          <p>تحفيز الخلايا على التجدد وتقليل الالتهاب — علاج عميق بدون ألم وبدون آثار جانبية.</p>
+        </div>
+      </div>
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <h3>الموجات فوق الصوتية العلاجية</h3>
+          <p>تخترق الأنسجة العميقة لتسريع الشفاء وتقليل التشنّج العضلي بدون أي إزعاج.</p>
+        </div>
+      </div>
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v3a2 2 0 0 1-2 2H3M21 8h-3a2 2 0 0 1-2-2V3M3 16h3a2 2 0 0 1 2 2v3M16 21v-3a2 2 0 0 1 2-2h3"/></svg></div>
+        <div>
+          <h3>التحفيز الكهربائي العصبي العضلي</h3>
+          <p>إعادة تنشيط العضلات الضعيفة وتقويتها بطريقة آمنة، خاصة بعد العمليات والإصابات.</p>
+        </div>
+      </div>
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div>
+          <h3>العلاج اليدوي والتلاعب الفقري</h3>
+          <p>تقنيات يدوية متخصصة لتحرير العضلات المتشنّجة وإعادة المحاذاة الطبيعية للعمود الفقري.</p>
+        </div>
+      </div>
+      <div class="equip">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <div>
+          <h3>أجهزة إعادة التأهيل المتقدمة</h3>
+          <p>أجهزة مراقبة الحركة والتمارين المُوجَّهة لتقدم قابل للقياس في كل جلسة.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRICING -->
+<section class="block pricing" id="book">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">باقات الجلسات</span>
+      <h2>اختر الباقة التي تناسبك</h2>
+      <p>كل الباقات تشمل تقييماً مجانياً، خطة علاجية مخصصة، وتمارين منزلية موثّقة بالفيديو.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>جلسة فردية</h3>
+        <p class="desc">للحالات الخفيفة أو لتجربة الخدمة لأول مرة.</p>
+        <div class="amount">250 <small>ر.س</small></div>
+        <div class="per">للجلسة الواحدة (60 دقيقة)</div>
+        <ul>
+          <li>تقييم مبدئي شامل</li>
+          <li>جلسة علاج يدوي</li>
+          <li>استخدام جهاز واحد متخصص</li>
+          <li>توصيات تمارين منزلية</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">احجز جلسة</a>
+      </div>
+      <div class="price-card popular">
+        <h3>باقة 8 جلسات</h3>
+        <p class="desc">الأكثر فعالية لأغلب الحالات المزمنة والإصابات.</p>
+        <div class="amount">1,650 <small>ر.س</small></div>
+        <div class="per">توفير 350 ر.س عن الجلسات المنفردة</div>
+        <ul>
+          <li>تقييم سريري متقدم</li>
+          <li>8 جلسات علاجية متكاملة</li>
+          <li>دمج كل الأجهزة المتاحة</li>
+          <li>برنامج تمارين مفصّل بالفيديو</li>
+          <li>متابعة عبر الواتساب</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">ابدأ خطتك العلاجية</a>
+      </div>
+      <div class="price-card">
+        <h3>برنامج تأهيل شامل</h3>
+        <p class="desc">للحالات الجراحية وما بعد الإصابات الحادة.</p>
+        <div class="amount">3,200 <small>ر.س</small></div>
+        <div class="per">16 جلسة على 8 أسابيع</div>
+        <ul>
+          <li>تقييم متعدد التخصصات</li>
+          <li>16 جلسة بأخصائي ثابت</li>
+          <li>كل التقنيات والأجهزة</li>
+          <li>زيارة منزلية واحدة مجانية</li>
+          <li>تقرير طبي معتمد</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">تواصل للحجز</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:32px;color:var(--ink-500);font-size:14px;">
+      * الأسعار تخضع للمراجعة بعد التقييم الأولي وقد تتغير بحسب تعقيد الحالة. خصومات خاصة لكبار السن وأصحاب الاحتياجات الخاصة.
+    </p>
+  </div>
+</section>
+
+<!-- 8. FAQ -->
+<section class="block svc-faq">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">أسئلة شائعة</span>
+      <h2>كل ما تريد معرفته قبل الجلسة الأولى</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item" open>
+        <summary>كم عدد الجلسات التي أحتاجها؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">يختلف العدد بحسب الحالة. الحالات البسيطة قد تحتاج 4–6 جلسات، بينما تحتاج الحالات المزمنة أو ما بعد الجراحة 12–20 جلسة. سيُحدد الأخصائي العدد المتوقع بدقة بعد التقييم الأولي.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل العلاج الطبيعي مؤلم؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">قد تشعر بضغط خفيف أو إجهاد عضلي بسيط في أول جلستين، وهذا طبيعي ومؤقت. أخصائيونا مدربون على العمل ضمن حدود راحتك تماماً، ولن نتجاوز حدود الألم.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل أحتاج إلى إحالة من طبيب؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">لا، يمكنك الحجز مباشرة. لكن إن كان لديك تقارير طبية أو أشعة سابقة، أحضرها معك في الزيارة الأولى لتسريع التشخيص.</div>
+      </details>
+      <details class="faq-item">
+        <summary>متى سأرى نتائج ملحوظة؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">معظم المرضى يلاحظون تحسناً واضحاً بعد 3–4 جلسات. لكن النتائج المستدامة تحتاج إلى إكمال البرنامج العلاجي كاملاً والالتزام بالتمارين المنزلية.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل تتعاملون مع التأمين الصحي؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">نعم، نتعاون مع عدد من شركات التأمين الرئيسية في المملكة. تواصل معنا لمعرفة ما إذا كانت بطاقتك مقبولة لدينا.</div>
+      </details>
+      <details class="faq-item">
+        <summary>هل يمكن الحصول على جلسات في المنزل؟<span class="toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>
+        <div class="a">نعم، لدينا برنامج علاج طبيعي منزلي للحالات التي يصعب عليها الحضور إلى المركز. اطلع على تفاصيله في صفحة "العلاج المنزلي".</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding: 0 0 96px;">
+  <div class="cta-banner">
+    <div class="cta-banner-grid">
+      <div>
+        <h2>لا تؤجّل الشفاء أكثر من ذلك</h2>
+        <p>كل يوم تتأخر فيه عن العلاج، تتحول مشكلة بسيطة إلى حالة مزمنة. ابدأ اليوم — والاستشارة الأولى مجانية تماماً.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#book" class="btn btn-primary btn-large">احجز استشارتك المجانية</a>
+        <a href="https://wa.me/966573998384" class="btn btn-secondary btn-large">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8.9-1 1.1-.4.2-.7.1c-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5s.1-.4 0-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.2-.1-.5-.2-.8-.4z"/></svg>
+          تواصل عبر واتساب
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. RELATED SERVICES -->
+<section class="block" style="background: var(--bg-soft);">
+  <div class="container">
+    <div class="block-head">
+      <span class="eyebrow">قد يهمّك أيضاً</span>
+      <h2>خدمات أخرى نقدمها</h2>
+    </div>
+    <div class="related-grid">
+      <a href="pain-management.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l3-9 4 18 3-9h5"/></svg></div>
+        <h3>إدارة الألم واستعادة الحركة</h3>
+        <p>برنامج متخصص لتخفيف الألم المزمن دون الاعتماد على المسكنات.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+      <a href="cupping.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="6"/><circle cx="12" cy="10" r="2"/><path d="M12 16v6"/></svg></div>
+        <h3>العلاج بالحجامة</h3>
+        <p>حجامة وقائية وعلاجية بأساليب طبية حديثة وآمنة.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+      <a href="advanced-tech.html" class="related">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>تقنيات إعادة التأهيل المتقدمة</h3>
+        <p>أحدث الأجهزة العالمية لدعم المفاصل والعضلات بدقة وكفاءة.</p>
+        <span class="arrow">اعرف المزيد ←</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="logo" href="../index.html">
+          <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l3 8h12l3-8-5 3-4-6-4 6z"/><circle cx="12" cy="3" r="1" fill="currentColor"/></svg></div>
+          <div class="logo-text">
+            <strong style="color:white;">تاج الأصحاء</strong>
+            <small style="color:rgba(255,255,255,0.5);">HEALIFE — KSA</small>
+          </div>
+        </a>
+        <p>شريكك الموثوق في رحلة الصحة والعافية — نجمع بين التقاليد العلاجية والتقنيات الحديثة لرعاية شاملة بمعايير عالمية.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../index.html#services">خدماتنا</a></li>
+          <li><a href="../index.html#about">من نحن</a></li>
+          <li><a href="../index.html#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>خدماتنا</h4>
+        <ul>
+          <li><a href="physical-therapy.html">العلاج الطبيعي وإعادة التأهيل</a></li>
+          <li><a href="pain-management.html">إدارة الألم</a></li>
+          <li><a href="cupping.html">العلاج بالحجامة</a></li>
+          <li><a href="advanced-tech.html">تقنيات إعادة التأهيل</a></li>
+          <li><a href="body-sculpting.html">التنحيف ونحت الجسم</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>معلومات التواصل</h4>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>المدينة المنورة، السعودية</span></div>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.13 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span style="direction:ltr;display:inline-block">+966 57 399 8384</span></div>
+        <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span style="direction:ltr;display:inline-block">info@healife-ksa.com</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 تاج الأصحاء — Healife KSA. جميع الحقوق محفوظة.</span>
+      <span>سياسة الخصوصية · الشروط والأحكام</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/966573998384" class="float-wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1-.8.9-1 1.1-.4.2-.7.1c-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5s.1-.4 0-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.2 3 2.1 3.2 5.1 4.5c.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.2-.1-.5-.2-.8-.4zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.4 5.1L2 22l5-1.4A10 10 0 0 0 12 22a10 10 0 0 0 0-20zm0 18a8 8 0 0 1-4.4-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 20 12a8 8 0 0 1-8 8z"/></svg>
+</a>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

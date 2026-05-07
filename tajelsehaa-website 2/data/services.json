@@ -1,0 +1,62 @@
+[
+  {
+    "id": "physical-therapy",
+    "title_ar": "العلاج الطبيعي وإعادة التأهيل",
+    "title_en": "Physical Therapy & Rehabilitation",
+    "icon": "stethoscope",
+    "description_ar": "جلسات متطورة لاستعادة الحركة وتقوية العضلات بعد الإصابات، مع برامج مخصصة لكل حالة وفق المعايير الدولية.",
+    "description_en": "Advanced sessions to restore movement and strengthen muscles after injuries, with personalized programs per international standards.",
+    "featured": false,
+    "order": 1
+  },
+  {
+    "id": "pain-management",
+    "title_ar": "إدارة الألم واستعادة الحركة",
+    "title_en": "Pain Management & Mobility",
+    "icon": "pulse",
+    "description_ar": "علاج متخصص لتخفيف الألم وتحسين اللياقة الحركية باستخدام أحدث تقنيات العلاج الطبيعي.",
+    "description_en": "Specialized treatment to relieve pain and improve mobility using the latest physical therapy techniques.",
+    "featured": false,
+    "order": 2
+  },
+  {
+    "id": "umrah-rehab",
+    "title_ar": "إعادة التأهيل المتخصصة للمعتمرين",
+    "title_en": "Pilgrim Rehabilitation Program",
+    "icon": "location",
+    "description_ar": "برامج إعادة تأهيل مخصصة للحجاج والمعتمرين، لتخفيف الإجهاد واستعادة النشاط بعد أداء المناسك.",
+    "description_en": "Rehab programs designed for pilgrims, to relieve fatigue and restore vitality after performing the rites.",
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "advanced-tech",
+    "title_ar": "تقنيات إعادة التأهيل المتقدمة",
+    "title_en": "Advanced Rehabilitation Tech",
+    "icon": "device",
+    "description_ar": "نستخدم أحدث الأجهزة لضمان نتائج فعالة في دعم المفاصل والعضلات، مع تقييم شامل من الطبيب لكل حالة.",
+    "description_en": "We use the latest devices to support joints and muscles, with a thorough physician assessment for each case.",
+    "featured": false,
+    "order": 4
+  },
+  {
+    "id": "body-sculpting",
+    "title_ar": "التنحيف ونحت الجسم",
+    "title_en": "Slimming & Body Sculpting",
+    "icon": "drop",
+    "description_ar": "جلسات آمنة لشفط الدهون وتكسير الدهون لنحت الجسم وتحسين المظهر الصحي بدون تدخل جراحي.",
+    "description_en": "Safe non-surgical sessions for fat reduction and body contouring.",
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "cupping",
+    "title_ar": "العلاج بالحجامة",
+    "title_en": "Cupping Therapy",
+    "icon": "cup",
+    "description_ar": "نوفر الحجامة الوقائية والعلاجية لتحفيز الدورة الدموية وتنقية الجسم من السموم بأساليب طبية حديثة وآمنة.",
+    "description_en": "Preventive and therapeutic cupping using modern, safe medical methods.",
+    "featured": false,
+    "order": 6
+  }
+]
