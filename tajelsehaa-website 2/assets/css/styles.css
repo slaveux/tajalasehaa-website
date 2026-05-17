@@ -1,26 +1,26 @@
 /* ---------- Tokens ---------- */
   :root {
-    --teal-900: #0b3a45;
-    --teal-800: #0f4c5a;
-    --teal-700: #126676;
-    --teal-600: #178899;
-    --teal-500: #1ea7b3;
-    --teal-50:  #e8f6f7;
-    --teal-100: #d2eef0;
-    --green-600: #3aa17e;
-    --green-500: #58b894;
-    --green-100: #d8efe4;
-    --sand-50:  #fbf8f3;
+    --teal-900: #162d3e;
+    --teal-800: #1c3a4e;
+    --teal-700: #24475E;
+    --teal-600: #2d5a73;
+    --teal-500: #0D8455;
+    --teal-50:  #eaeff4;
+    --teal-100: #d0dbe5;
+    --green-600: #DABA6C;
+    --green-500: #e2c98a;
+    --green-100: #f5ecd4;
+    --sand-50:  #FFF9E5;
     --ink-900:  #0c1a1f;
     --ink-700:  #2c3e44;
     --ink-500:  #5b6e74;
     --ink-300:  #97a6ab;
     --line:     #e5ebec;
     --bg:       #ffffff;
-    --bg-soft:  #f5f8f9;
-    --shadow-sm: 0 1px 2px rgba(11,58,69,.06), 0 1px 3px rgba(11,58,69,.04);
-    --shadow-md: 0 6px 18px -8px rgba(11,58,69,.18), 0 2px 6px rgba(11,58,69,.06);
-    --shadow-lg: 0 24px 48px -20px rgba(11,58,69,.25), 0 6px 18px -10px rgba(11,58,69,.12);
+    --bg-soft:  #F4F4F4;
+    --shadow-sm: 0 1px 2px rgba(36,71,94,.06), 0 1px 3px rgba(36,71,94,.04);
+    --shadow-md: 0 6px 18px -8px rgba(36,71,94,.18), 0 2px 6px rgba(36,71,94,.06);
+    --shadow-lg: 0 24px 48px -20px rgba(36,71,94,.25), 0 6px 18px -10px rgba(36,71,94,.12);
     --radius-sm: 10px;
     --radius:    16px;
     --radius-lg: 24px;
@@ -28,7 +28,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+    font-family: "Manrope", "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
     color: var(--ink-900);
     background: var(--bg);
     font-size: 16px;
@@ -40,7 +40,7 @@
   a { color: inherit; text-decoration: none; }
   button { font-family: inherit; cursor: pointer; border: none; background: none; }
   .container { width: min(1240px, 92%); margin: 0 auto; }
-  h1, h2, h3, h4 { font-family: "Tajawal", "IBM Plex Sans Arabic", sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; margin: 0; color: var(--ink-900); }
+  h1, h2, h3, h4 { font-family: "Benida", "Tajawal", "IBM Plex Sans Arabic", sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; margin: 0; color: var(--ink-900); }
   h2 { font-size: clamp(28px, 3.4vw, 44px); }
   h3 { font-size: 22px; font-weight: 700; }
   p  { margin: 0; color: var(--ink-700); }
@@ -55,7 +55,7 @@
   /* ---------- Top utility bar ---------- */
   .util-bar {
     background: var(--teal-900);
-    color: #cfe6e9;
+    color: #c8d4de;
     font-size: 13px;
   }
   .util-bar .container {
@@ -66,7 +66,7 @@
   .util-meta span { display: inline-flex; align-items: center; gap: 6px; }
   .util-meta svg { width: 14px; height: 14px; }
   .util-lang { display: inline-flex; gap: 12px; }
-  .util-lang button { color: #cfe6e9; font-size: 13px; padding: 0; }
+  .util-lang button { color: #c8d4de; font-size: 13px; padding: 0; }
   .util-lang button.active { color: white; font-weight: 600; }
 
   /* ---------- Header ---------- */
@@ -90,7 +90,7 @@
   }
   .logo-mark svg { width: 22px; height: 22px; }
   .logo-text { display: flex; flex-direction: column; line-height: 1.05; }
-  .logo-text strong { font-family: "Tajawal", sans-serif; font-weight: 800; font-size: 18px; color: var(--teal-900); }
+  .logo-text strong { font-family: "Benida", "Tajawal", sans-serif; font-weight: 800; font-size: 18px; color: var(--teal-900); }
   .logo-text small { font-size: 11px; color: var(--ink-500); letter-spacing: 0.04em; }
 
   .nav-menu { display: flex; gap: 4px; align-items: center; }
@@ -134,8 +134,8 @@
   .hero::before {
     content:""; position: absolute; inset: 0; pointer-events: none;
     background:
-      radial-gradient(circle at 90% 10%, rgba(30,167,179,0.08), transparent 40%),
-      radial-gradient(circle at 5% 85%, rgba(58,161,126,0.07), transparent 40%);
+      radial-gradient(circle at 90% 10%, rgba(13,132,85,0.08), transparent 40%),
+      radial-gradient(circle at 5% 85%, rgba(218,186,108,0.07), transparent 40%);
   }
   .hero-grid {
     display: grid; grid-template-columns: 1.05fr 1fr;
@@ -143,7 +143,7 @@
   }
   .hero-eyebrow { margin-bottom: 20px; }
   .hero h1 {
-    font-family: "Tajawal", sans-serif;
+    font-family: "Benida", "Tajawal", sans-serif;
     font-weight: 900;
     font-size: clamp(38px, 5.2vw, 68px);
     line-height: 1.08;
@@ -185,7 +185,7 @@
     border-top: 1px solid var(--line);
     flex-wrap: wrap;
   }
-  .trust-item .num { font-family: "Tajawal", sans-serif; font-weight: 800; font-size: 28px; color: var(--teal-800); line-height: 1; }
+  .trust-item .num { font-family: "Benida", "Tajawal", sans-serif; font-weight: 800; font-size: 28px; color: var(--teal-800); line-height: 1; }
   .trust-item .lbl { font-size: 13px; color: var(--ink-500); margin-top: 4px; }
 
   /* Hero visual */
@@ -200,7 +200,7 @@
   .hero-visual .photo {
     position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, rgba(11,58,69,0) 40%, rgba(11,58,69,0.55) 100%),
+      linear-gradient(180deg, rgba(36,71,94,0) 40%, rgba(36,71,94,0.55) 100%),
       url('../images/hero-rehab.svg') center/cover;
   }
   .hero-visual .photo-fallback {
@@ -237,7 +237,7 @@
   .hero-card .text { font-size: 13px; line-height: 1.4; }
   .hero-card .text strong { display: block; font-size: 14px; color: var(--ink-900); margin-bottom: 2px; }
   .hero-card .text span { color: var(--ink-500); }
-  .hero-card .stars { color: #f4b740; font-size: 13px; letter-spacing: 1px; }
+  .hero-card .stars { color: #DABA6C; font-size: 13px; letter-spacing: 1px; }
 
   /* ---------- Why-strip (chip row) ---------- */
   .why-strip {
@@ -263,7 +263,7 @@
   .why-chip:first-child { border-right: none; }
   .why-chip .ico {
     width: 36px; height: 36px; border-radius: 10px;
-    background: rgba(30,167,179,0.18);
+    background: rgba(13,132,85,0.18);
     color: var(--teal-500);
     display: grid; place-items: center; flex: 0 0 36px;
   }
@@ -327,7 +327,7 @@
     aspect-ratio: 4/5;
     border-radius: var(--radius-lg);
     background:
-      linear-gradient(180deg, transparent 60%, rgba(11,58,69,0.4)),
+      linear-gradient(180deg, transparent 60%, rgba(36,71,94,0.4)),
       url('../images/about-clinic.svg') center/cover,
       var(--teal-700);
     box-shadow: var(--shadow-lg);
@@ -424,9 +424,9 @@
     background-size: cover; background-position: center;
     position: relative;
   }
-  .program-img.p1 { background-image: linear-gradient(180deg, transparent, rgba(11,58,69,0.5)), url('../images/program-rehab.svg'); background-color: var(--teal-700); }
-  .program-img.p2 { background-image: linear-gradient(180deg, transparent, rgba(11,58,69,0.5)), url('../images/program-home.svg'); background-color: var(--teal-600); }
-  .program-img.p3 { background-image: linear-gradient(180deg, transparent, rgba(11,58,69,0.5)), url('../images/program-umrah.svg'); background-color: var(--green-600); }
+  .program-img.p1 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-rehab.svg'); background-color: var(--teal-700); }
+  .program-img.p2 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-home.svg'); background-color: var(--teal-600); }
+  .program-img.p3 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-umrah.svg'); background-color: var(--green-600); }
   .program-tag {
     position: absolute; top: 16px; right: 16px;
     background: rgba(255,255,255,0.95);
@@ -450,7 +450,7 @@
   .techniques { background: var(--teal-900); color: white; }
   .techniques h2, .techniques .block-head p { color: white; }
   .techniques .block-head p { color: rgba(255,255,255,0.7); }
-  .techniques .eyebrow { background: rgba(30,167,179,0.18); color: var(--teal-500); }
+  .techniques .eyebrow { background: rgba(13,132,85,0.18); color: var(--teal-500); }
   .techniques .eyebrow::before { background: var(--teal-500); }
   .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .tech-card {
@@ -460,9 +460,9 @@
     padding: 32px 28px;
     transition: 0.25s ease;
   }
-  .tech-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(30,167,179,0.4); }
+  .tech-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(13,132,85,0.4); }
   .tech-num {
-    font-family: "Tajawal", sans-serif;
+    font-family: "Benida", "Tajawal", sans-serif;
     font-size: 14px; font-weight: 700;
     color: var(--teal-500);
     margin-bottom: 12px; letter-spacing: 0.1em;
@@ -488,7 +488,7 @@
     font-weight: 900;
   }
   .quote-card .stars {
-    color: #f4b740; font-size: 16px; margin-bottom: 16px;
+    color: #DABA6C; font-size: 16px; margin-bottom: 16px;
     letter-spacing: 2px;
   }
   .quote-card .text {
@@ -522,13 +522,13 @@
     content:""; position: absolute;
     top: -120px; left: -120px;
     width: 380px; height: 380px;
-    background: radial-gradient(circle, rgba(58,161,126,0.5), transparent 60%);
+    background: radial-gradient(circle, rgba(218,186,108,0.5), transparent 60%);
   }
   .cta-banner::after {
     content:""; position: absolute;
     bottom: -100px; right: -80px;
     width: 320px; height: 320px;
-    background: radial-gradient(circle, rgba(30,167,179,0.35), transparent 60%);
+    background: radial-gradient(circle, rgba(13,132,85,0.35), transparent 60%);
   }
   .cta-banner-grid {
     display: grid; grid-template-columns: 1.4fr 1fr;
@@ -589,8 +589,8 @@
   .map-placeholder {
     position: absolute; inset: 0;
     background:
-      radial-gradient(circle at 30% 40%, rgba(30,167,179,0.12), transparent 40%),
-      radial-gradient(circle at 70% 60%, rgba(58,161,126,0.10), transparent 40%),
+      radial-gradient(circle at 30% 40%, rgba(13,132,85,0.12), transparent 40%),
+      radial-gradient(circle at 70% 60%, rgba(218,186,108,0.10), transparent 40%),
       linear-gradient(180deg, #eef4f5, #e2eef0);
   }
   .map-placeholder svg.streets { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -604,7 +604,7 @@
     transform: rotate(-45deg);
     margin: 0 auto;
     display: grid; place-items: center;
-    box-shadow: 0 8px 16px -4px rgba(11,58,69,0.4);
+    box-shadow: 0 8px 16px -4px rgba(36,71,94,0.4);
     animation: pin-bounce 2s infinite;
   }
   .map-pin .pin svg { transform: rotate(45deg); width: 22px; height: 22px; color: white; }
@@ -654,7 +654,7 @@
 
   /* ---------- Footer ---------- */
   .footer {
-    background: #06262e; color: rgba(255,255,255,0.75);
+    background: #0e1f2d; color: rgba(255,255,255,0.75);
     padding: 72px 0 24px;
   }
   .footer-grid {
