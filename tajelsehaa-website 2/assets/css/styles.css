@@ -201,7 +201,7 @@
     position: absolute; inset: 0;
     background:
       linear-gradient(180deg, rgba(36,71,94,0) 40%, rgba(36,71,94,0.55) 100%),
-      url('../images/hero-rehab.svg') center/cover;
+      url('https://images.pexels.com/photos/4506072/pexels-photo-4506072.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
   }
   .hero-visual .photo-fallback {
     position: absolute; inset: 0;
@@ -328,7 +328,7 @@
     border-radius: var(--radius-lg);
     background:
       linear-gradient(180deg, transparent 60%, rgba(36,71,94,0.4)),
-      url('../images/about-clinic.svg') center/cover,
+      url('https://images.pexels.com/photos/7108324/pexels-photo-7108324.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover,
       var(--teal-700);
     box-shadow: var(--shadow-lg);
   }
@@ -424,9 +424,9 @@
     background-size: cover; background-position: center;
     position: relative;
   }
-  .program-img.p1 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-rehab.svg'); background-color: var(--teal-700); }
-  .program-img.p2 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-home.svg'); background-color: var(--teal-600); }
-  .program-img.p3 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('../images/program-umrah.svg'); background-color: var(--green-600); }
+  .program-img.p1 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('https://images.pexels.com/photos/20860586/pexels-photo-20860586.jpeg?auto=compress&cs=tinysrgb&w=600'); background-color: var(--teal-700); }
+  .program-img.p2 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('https://images.pexels.com/photos/4506078/pexels-photo-4506078.jpeg?auto=compress&cs=tinysrgb&w=600'); background-color: var(--teal-600); }
+  .program-img.p3 { background-image: linear-gradient(180deg, transparent, rgba(36,71,94,0.5)), url('https://images.pexels.com/photos/20860577/pexels-photo-20860577.jpeg?auto=compress&cs=tinysrgb&w=600'); background-color: var(--green-600); }
   .program-tag {
     position: absolute; top: 16px; right: 16px;
     background: rgba(255,255,255,0.95);
