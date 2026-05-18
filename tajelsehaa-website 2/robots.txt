@@ -1,0 +1,13 @@
+# robots.txt for tajalasehaa.sa
+# Taj Al Asihaa - HealLife
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tajalasehaa.sa/sitemap.xml
+
+# Block access to assets directory for crawlers
+Disallow: /assets/js/
+Disallow: /database/
+Disallow: /data/
