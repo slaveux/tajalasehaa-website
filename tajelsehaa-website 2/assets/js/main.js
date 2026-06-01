@@ -5,26 +5,6 @@
   const PARALLAX_SPEED = 0.3;
   const IS_MOBILE = window.innerWidth <= 768;
 
-  // ── STICKY OVERLAP SECTIONS ──
-  function initStickyOverlap() {
-    // Select all top-level sections + the why-strip + CTA wrapper
-    const sections = document.querySelectorAll(
-      'section.hero, section.block, .why-strip-wrap, section[style]'
-    );
-
-    sections.forEach((section, i) => {
-      section.classList.add('sticky-section');
-      // z-index increases so each new section stacks on top
-      section.style.zIndex = i + 1;
-
-      // Ensure every section has a solid background (no transparency)
-      const bg = getComputedStyle(section).backgroundColor;
-      if (!bg || bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') {
-        section.style.backgroundColor = '#ffffff';
-      }
-    });
-  }
-
   // ── SCROLL REVEAL (IntersectionObserver) ──
   function initReveal() {
     const io = new IntersectionObserver((entries) => {
@@ -131,7 +111,6 @@
 
   // ── INIT ──
   function init() {
-    initStickyOverlap();
     initReveal();
     initParallax();
   }
