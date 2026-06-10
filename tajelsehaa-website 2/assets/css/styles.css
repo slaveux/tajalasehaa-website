@@ -808,3 +808,28 @@
       transform: translateY(20px);
     }
   
+
+  /* ---------- Accessibility & polish (v2) ---------- */
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-right, .reveal-left, .reveal-scale {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .hero-visual, .hero-text, .why-strip-wrap {
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Visible keyboard focus */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--teal-700, #0D8455);
+    outline-offset: 2px;
+  }
