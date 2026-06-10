@@ -138,7 +138,7 @@
       radial-gradient(circle at 5% 85%, rgba(218,186,108,0.07), transparent 40%);
   }
   .hero-grid {
-    display: grid; grid-template-columns: 1.05fr 1fr;
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     gap: 56px; align-items: center; position: relative;
   }
   .hero-eyebrow { margin-bottom: 20px; }
@@ -807,6 +807,14 @@
     .reveal-scale {
       transform: translateY(20px);
     }
+  }
+
+  /* Hero fix: let the H1 accent phrase wrap (nowrap was collapsing the
+     photo column to ~140px on wide screens) */
+  .hero h1 .accent {
+    white-space: normal;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
   /* ---------- Accessibility & polish (v2) ---------- */
